@@ -187,6 +187,15 @@ namespace GameTimer
 			return ((float)iFrames / 60.0f);
 		}
 
+		/// <summary>
+		/// A method to be used in a delegate
+		/// </summary>
+		/// <returns></returns>
+		public float GetCurrentTime()
+		{
+			return CurrentTime;
+		}
+
 		#endregion
 
 		#region Networking
