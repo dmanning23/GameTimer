@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTimer", "GameTimer\GameTimer.csproj", "{34F0272D-BBF9-4996-8EA4-B231872A28AF}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTimer.Windows", "GameTimer\GameTimer.Windows.csproj", "{34F0272D-BBF9-4996-8EA4-B231872A28AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +13,9 @@ Global
 		{34F0272D-BBF9-4996-8EA4-B231872A28AF}.Debug|x86.Build.0 = Debug|x86
 		{34F0272D-BBF9-4996-8EA4-B231872A28AF}.Release|x86.ActiveCfg = Release|x86
 		{34F0272D-BBF9-4996-8EA4-B231872A28AF}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = GameTimer\GameTimer.Windows.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
