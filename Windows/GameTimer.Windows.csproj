@@ -43,19 +43,19 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="..\..\Source\CountdownTimer.cs">
+    <Compile Include="..\Source\CountdownTimer.cs">
       <Link>CountdownTimer.cs</Link>
     </Compile>
-    <Compile Include="..\..\Source\GameClock.cs">
+    <Compile Include="..\Source\GameClock.cs">
       <Link>GameClock.cs</Link>
     </Compile>
-    <Compile Include="..\..\Source\HitPauseClock.cs">
+    <Compile Include="..\Source\HitPauseClock.cs">
       <Link>HitPauseClock.cs</Link>
     </Compile>
-    <Compile Include="..\..\Source\TimeUpdater.cs">
+    <Compile Include="..\Source\TimeUpdater.cs">
       <Link>TimeUpdater.cs</Link>
     </Compile>
-    <Compile Include="..\..\Source\Properties\AssemblyInfo.cs">
+    <Compile Include="..\Source\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo.cs</Link>
     </Compile>
   </ItemGroup>
