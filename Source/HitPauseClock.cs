@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.Xna.Framework;
-#if !NO_NETWORKING
+#if NETWORKING
 using Microsoft.Xna.Framework.Net;
 #endif
 
@@ -75,7 +75,7 @@ namespace GameTimer
 
 		#region Networking
 
-#if !NO_NETWORKING
+#if NETWORKING
 
 		/// <summary>
 		/// Read this object from a network packet reader.
