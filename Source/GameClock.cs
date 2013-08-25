@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 #if NETWORKING
 using Microsoft.Xna.Framework.Net;
 #endif
+using System.Text;
 
 namespace GameTimer
 {
@@ -194,6 +195,60 @@ namespace GameTimer
 		public float GetCurrentTime()
 		{
 			return CurrentTime;
+		}
+
+		/// <summary>
+		/// Returns a string that represents the current object.
+		/// </summary>
+		/// <returns>A string that represents the current object.</returns>
+		/// <filterpriority>2</filterpriority>
+		public override string ToString()
+		{
+			return GameClock.ToTimeString(GetCurrentTime());
+		}
+
+		/// <summary>
+		/// Get the remaining time as a human readable string
+		/// </summary>
+		/// <returns>The time string.</returns>
+		/// <param name="fTime">the time to convert to a string</param>
+		protected static string ToTimeString(float fTime)
+		{
+			//stringbuilder to hold our text
+			StringBuilder strTime = new StringBuilder();
+
+			//Get the number of hours
+			int iHours = (int)(fTime / 3600.0f);
+			if (0 < iHours)
+			{
+				//Add the number of hours to the string
+				strTime.AppendFormat("{0}:", iHours.ToString());
+
+				//subtract the number of hours from the time
+				fTime -= iHours * 3600;
+			}
+
+			//get the number of minutes
+			int iMinutes = (int)(fTime / 60.0f);
+
+			//add a 0 if there are hours on the clock but single digit minutes
+			if ((0 < iHours) && (iMinutes < 10))
+			{
+				strTime.AppendFormat("0");
+			}
+
+			//add the number of minutes to the string
+			strTime.AppendFormat("{0}:", iMinutes.ToString());
+
+			//add the number of seconds
+			int iSeconds = (int)(fTime % 60.0f);
+			if (iSeconds < 10)
+			{
+				strTime.AppendFormat("0");
+			}
+			strTime.Append(iSeconds.ToString());
+
+			return strTime.ToString();
 		}
 
 		#endregion
