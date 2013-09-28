@@ -29,7 +29,7 @@ namespace GameTimer
 		/// Defaults to 1.0f, used to speed up or slow down the timer.  
 		/// This will also affect all the timers down stream when they are updated off this timer
 		/// </summary>
-		public float TimerSpeed { protected get; set; }
+		public float TimerSpeed { get; set; }
 
 		#endregion //Member Variables
 
@@ -44,6 +44,15 @@ namespace GameTimer
 			TimeDelta = 0.0f;
 			Paused = false;
 			TimerSpeed = 1.0f;
+		}
+
+		/// <summary>
+		/// Start the game timer.
+		/// </summary>
+		public virtual void Start()
+		{
+			CurrentTime = 0.0f;
+			Paused = false;
 		}
 
 		/// <summary>
@@ -131,15 +140,6 @@ namespace GameTimer
 			Update(GameClock.FramesToSeconds(iCurrentTime));
 		}
 
-		/// <summary>
-		/// Start the game timer.
-		/// </summary>
-		public virtual void Start()
-		{
-			CurrentTime = 0.0f;
-			Paused = false;
-		}
-
 		public float PreviousTime()
 		{
 			float PrevTime = (CurrentTime - TimeDelta);
@@ -212,7 +212,7 @@ namespace GameTimer
 		/// </summary>
 		/// <returns>The time string.</returns>
 		/// <param name="fTime">the time to convert to a string</param>
-		protected static string ToTimeString(float fTime)
+		public static string ToTimeString(float fTime)
 		{
 			//stringbuilder to hold our text
 			StringBuilder strTime = new StringBuilder();
