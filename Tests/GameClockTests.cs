@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System;
 using GameTimer;
+using Microsoft.Xna.Framework;
 
 namespace GameTimer.Tests
 {
@@ -25,6 +26,12 @@ namespace GameTimer.Tests
 		public void DefaultCurrentTime()
 		{
 			Assert.AreEqual(0.0f, test.CurrentTime);
+		}
+
+		[Test()]
+		public void DefaultCurrentTime1()
+		{
+			Assert.AreEqual(0.0f, test.GetCurrentTime());
 		}
 
 		[Test()]
@@ -55,6 +62,14 @@ namespace GameTimer.Tests
 			test.CurrentTime = 1.0f;
 			test.Start();
 			Assert.AreEqual(0.0f, test.CurrentTime);
+		}
+
+		[Test()]
+		public void StartCurrentTime1()
+		{
+			test.CurrentTime = 1.0f;
+			test.Start();
+			Assert.AreEqual(0.0f, test.GetCurrentTime());
 		}
 
 		[Test()]
@@ -168,6 +183,88 @@ namespace GameTimer.Tests
 		}
 
 		#endregion //String methods
+
+		#region Update from gametimer
+
+		[Test()]
+		public void UpdateFromGameTimerCurrent()
+		{
+			GameClock test2 = new GameClock();
+			test2.TimeDelta = 0.5f;
+			test.Update(test2);
+			Assert.AreEqual(0.5f, test.CurrentTime);
+		}
+
+		[Test()]
+		public void UpdateFromGameTimerCurrent1()
+		{
+			GameClock test2 = new GameClock();
+			test2.TimeDelta = 0.5f;
+			test.Update(test2);
+			Assert.AreEqual(0.5f, test.GetCurrentTime());
+		}
+
+		[Test()]
+		public void UpdateFromGameTimerDelta()
+		{
+			GameClock test2 = new GameClock();
+			test2.TimeDelta = 0.5f;
+			test.Update(test2);
+			Assert.AreEqual(0.5f, test.TimeDelta);
+		}
+
+		[Test()]
+		public void UpdateFromGameTimerCurrentMultiple()
+		{
+			GameClock test2 = new GameClock();
+			test2.TimeDelta = 0.5f;
+			test.Update(test2);
+			test.Update(test2);
+			Assert.AreEqual(1.0f, test.CurrentTime);
+		}
+
+		[Test()]
+		public void UpdateFromGameTimerDeltaMultiple()
+		{
+			GameClock test2 = new GameClock();
+			test2.TimeDelta = 0.5f;
+			test.Update(test2);
+			test.Update(test2);
+			Assert.AreEqual(0.5f, test.TimeDelta);
+		}
+
+		[Test()]
+		public void UpdateFromGameTimerPaused()
+		{
+			test.Paused = true;
+			GameClock test2 = new GameClock();
+			test2.TimeDelta = 0.5f;
+			test.Update(test2);
+			test.Update(test2);
+			Assert.AreEqual(0.0f, test.CurrentTime);
+		}
+
+		[Test()]
+		public void UpdateFromGameTimerPaused1()
+		{
+			GameClock test2 = new GameClock();
+			test2.TimeDelta = 0.5f;
+			test.Update(test2);
+			test.Paused = true;
+			test.Update(test2);
+			Assert.AreEqual(0.5f, test.CurrentTime);
+		}
+
+		[Test()]
+		public void UpdateFromGameTimerFast()
+		{
+			test.TimerSpeed = 2.0f;
+			GameClock test2 = new GameClock();
+			test2.TimeDelta = 0.5f;
+			test.Update(test2);
+			Assert.AreEqual(1.0f, test.TimeDelta);
+		}
+
+		#endregion //Update from gametimer
 	}
 }
-
