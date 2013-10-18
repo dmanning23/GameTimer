@@ -1,5 +1,5 @@
-﻿using System.Diagnostics;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
+
 #if NETWORKING
 using Microsoft.Xna.Framework.Net;
 #endif
