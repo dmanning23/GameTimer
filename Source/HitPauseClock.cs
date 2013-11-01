@@ -14,7 +14,7 @@ namespace GameTimer
 		#region Members
 
 		//timer for doing hit pause
-		CountdownTimer m_HitPause;
+		private readonly CountdownTimer m_HitPause;
 
 		#endregion //Members
 
@@ -77,9 +77,9 @@ namespace GameTimer
 
 #if NETWORKING
 
-		/// <summary>
-		/// Read this object from a network packet reader.
-		/// </summary>
+	/// <summary>
+	/// Read this object from a network packet reader.
+	/// </summary>
 		public override void ReadFromNetwork(PacketReader packetReader)
 		{
 			base.ReadFromNetwork(packetReader);

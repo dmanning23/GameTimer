@@ -11,14 +11,14 @@ namespace GameTimer
 		#region Members
 
 		/// <summary>
-		/// the time this thing was started at
-		/// </summary>
-		private long m_iStartTime;
-
-		/// <summary>
 		/// the current time of this thing
 		/// </summary>
 		private float m_fCurrentTime;
+
+		/// <summary>
+		/// the time this thing was started at
+		/// </summary>
+		private long m_iStartTime;
 
 		#endregion //Members
 

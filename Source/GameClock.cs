@@ -1,8 +1,9 @@
+using System.Text;
 using Microsoft.Xna.Framework;
+
 #if NETWORKING
 using Microsoft.Xna.Framework.Net;
 #endif
-using System.Text;
 
 namespace GameTimer
 {
@@ -38,7 +39,7 @@ namespace GameTimer
 		/// <summary>
 		/// hello, standard constructor!
 		/// </summary>
-		public GameClock() 
+		public GameClock()
 		{
 			CurrentTime = 0.0f;
 			TimeDelta = 0.0f;
@@ -185,7 +186,7 @@ namespace GameTimer
 		/// <returns>floating point time</returns>
 		public static float FramesToSeconds(int iFrames)
 		{
-			return ((float)iFrames / 60.0f);
+			return (iFrames / 60.0f);
 		}
 
 		/// <summary>
@@ -215,10 +216,10 @@ namespace GameTimer
 		public static string ToTimeString(float fTime)
 		{
 			//stringbuilder to hold our text
-			StringBuilder strTime = new StringBuilder();
+			var strTime = new StringBuilder();
 
 			//Get the number of hours
-			int iHours = (int)(fTime / 3600.0f);
+			var iHours = (int)(fTime / 3600.0f);
 			if (0 < iHours)
 			{
 				//Add the number of hours to the string
@@ -229,7 +230,7 @@ namespace GameTimer
 			}
 
 			//get the number of minutes
-			int iMinutes = (int)(fTime / 60.0f);
+			var iMinutes = (int)(fTime / 60.0f);
 
 			//add a 0 if there are hours on the clock but single digit minutes
 			if ((0 < iHours) && (iMinutes < 10))
@@ -241,7 +242,7 @@ namespace GameTimer
 			strTime.AppendFormat("{0}:", iMinutes.ToString());
 
 			//add the number of seconds
-			int iSeconds = (int)(fTime % 60.0f);
+			var iSeconds = (int)(fTime % 60.0f);
 			if (iSeconds < 10)
 			{
 				strTime.AppendFormat("0");
@@ -257,9 +258,9 @@ namespace GameTimer
 
 #if NETWORKING
 
-		/// <summary>
-		/// Read this object from a network packet reader.
-		/// </summary>
+	/// <summary>
+	/// Read this object from a network packet reader.
+	/// </summary>
 		public virtual void ReadFromNetwork(PacketReader packetReader)
 		{
 			CurrentTime = packetReader.ReadSingle();

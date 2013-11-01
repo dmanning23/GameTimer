@@ -1,3 +1,4 @@
+
 #if NETWORKING
 using Microsoft.Xna.Framework.Net;
 #endif
@@ -108,9 +109,9 @@ namespace GameTimer
 
 #if NETWORKING
 
-		/// <summary>
-		/// Read this object from a network packet reader.
-		/// </summary>
+	/// <summary>
+	/// Read this object from a network packet reader.
+	/// </summary>
 		public override void ReadFromNetwork(PacketReader packetReader)
 		{
 			base.ReadFromNetwork(packetReader);
