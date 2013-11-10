@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -29,10 +29,10 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
     <Reference Include="nunit.framework">
-      <Private>False</Private>
+      <HintPath>..\..\..\Windows\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -42,13 +42,16 @@
     <Compile Include="TimeUpdaterTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Windows\GameTimer.Windows.csproj">
-      <Project>{6B6D4188-5C03-4E16-923B-96FDBC85B91A}</Project>
-      <Name>GameTimer.Windows</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\externals\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsGL.csproj">
+    <ProjectReference Include="..\..\MonoGame\MonoGame.Framework\MonoGame.Framework.WindowsGL.csproj">
       <Project>{7DE47032-A904-4C29-BD22-2D235E8D91BA}</Project>
       <Name>MonoGame.Framework.WindowsGL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Windows\GameTimer.Windows.csproj">
+      <Project>{6b6d4188-5c03-4e16-923b-96fdbc85b91a}</Project>
+      <Name>GameTimer.Windows</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
