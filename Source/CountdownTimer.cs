@@ -75,6 +75,15 @@ namespace GameTimer
 		}
 
 		/// <summary>
+		/// Add some time to a time that is currently counting down
+		/// </summary>
+		/// <param name="time"></param>
+		public void AddTime(float time)
+		{
+			CountdownLength += time;
+		}
+
+		/// <summary>
 		/// Returns a string that represents the current object.
 		/// </summary>
 		/// <returns>A string that represents the current object.</returns>
