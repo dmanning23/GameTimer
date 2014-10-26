@@ -1,9 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 
-#if NETWORKING
-using Microsoft.Xna.Framework.Net;
-#endif
-
 namespace GameTimer
 {
 	/// <summary>
@@ -72,31 +68,5 @@ namespace GameTimer
 		}
 
 		#endregion //Methods
-
-		#region Networking
-
-#if NETWORKING
-
-	/// <summary>
-	/// Read this object from a network packet reader.
-	/// </summary>
-		public override void ReadFromNetwork(PacketReader packetReader)
-		{
-			base.ReadFromNetwork(packetReader);
-			m_HitPause.ReadFromNetwork(packetReader);
-		}
-
-		/// <summary>
-		/// Write this object to a network packet reader.
-		/// </summary>
-		public override void WriteToNetwork(PacketWriter packetWriter)
-		{
-			base.WriteToNetwork(packetWriter);
-			m_HitPause.WriteToNetwork(packetWriter);
-		}
-
-#endif
-
-		#endregion //Networking
 	}
 }

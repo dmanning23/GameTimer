@@ -1,10 +1,6 @@
 using System.Text;
 using Microsoft.Xna.Framework;
 
-#if NETWORKING
-using Microsoft.Xna.Framework.Net;
-#endif
-
 namespace GameTimer
 {
 	public class GameClock
@@ -253,31 +249,5 @@ namespace GameTimer
 		}
 
 		#endregion
-
-		#region Networking
-
-#if NETWORKING
-
-	/// <summary>
-	/// Read this object from a network packet reader.
-	/// </summary>
-		public virtual void ReadFromNetwork(PacketReader packetReader)
-		{
-			CurrentTime = packetReader.ReadSingle();
-			Paused = packetReader.ReadBoolean();
-		}
-
-		/// <summary>
-		/// Write this object to a network packet reader.
-		/// </summary>
-		public virtual void WriteToNetwork(PacketWriter packetWriter)
-		{
-			packetWriter.Write(CurrentTime);
-			packetWriter.Write(Paused);
-		}
-
-#endif
-
-		#endregion //Networking
 	}
 }
