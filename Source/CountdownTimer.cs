@@ -52,6 +52,15 @@ namespace GameTimer
 		}
 
 		/// <summary>
+		/// check if there is any time left on this timer
+		/// </summary>
+		/// <returns></returns>
+		public bool HasTimeRemaining()
+		{
+			return (0.0f < RemainingTime());
+		}
+
+		/// <summary>
 		/// start the egg timer!
 		/// </summary>
 		public override void Start()
