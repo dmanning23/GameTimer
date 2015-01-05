@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6B6D4188-5C03-4E16-923B-96FDBC85B91A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>GameTimer.Windows</RootNamespace>
