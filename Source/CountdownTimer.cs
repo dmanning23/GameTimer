@@ -43,6 +43,19 @@ namespace GameTimer
 		}
 
 		/// <summary>
+		/// start the egg timer!
+		/// </summary>
+		/// <param name="fSeconds">how long to run this timer</param>
+		/// <param name="startTime"></param>
+		public void Start(float fSeconds, float startTime)
+		{
+			base.Start();
+			CountdownLength = fSeconds;
+			CurrentTime = startTime;
+			StartTime = CurrentTime;
+		}
+
+		/// <summary>
 		/// get the amount of time remaining on this egg timer
 		/// </summary>
 		/// <returns>the number of seconds left</returns>
