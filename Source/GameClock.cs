@@ -43,6 +43,14 @@ namespace GameTimer
 			TimerSpeed = 1.0f;
 		}
 
+		public GameClock(GameClock inst)
+		{
+			CurrentTime = inst.CurrentTime;
+			TimeDelta = inst.TimeDelta;
+			Paused = inst.Paused;
+			TimerSpeed = inst.TimerSpeed;
+		}
+
 		/// <summary>
 		/// Start the game timer.
 		/// </summary>
