@@ -43,8 +43,6 @@
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\Source\CountdownTimer.cs">
@@ -63,6 +61,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="GameTimer.Android.nuspec" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>

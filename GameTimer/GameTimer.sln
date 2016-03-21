@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTimer.Android", "GameTi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTimer.WindowsGL", "GameTimer.WindowsGL\GameTimer.WindowsGL.csproj", "{E84AE3B7-8123-4A26-8225-6A56FDB1C1CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTimer.Tests", "..\Tests\GameTimer.Tests.csproj", "{19166C0A-4356-4843-98E4-4DE999F897CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTimer.Tests", "GameTimer.Tests\GameTimer.Tests.csproj", "{19166C0A-4356-4843-98E4-4DE999F897CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
