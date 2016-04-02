@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <id>GameTimer.Android</id>
+        <id>GameTimer.WindowsUniversal</id>
         <version>1.0.7</version>
-        <title>GameTimer.Android</title>
+        <title>GameTimer.WindowsUniversal</title>
         <authors>dmanning23</authors>
 		<owners>dmanning23</owners>
 		<projectUrl>https://github.com/dmanning23/GameTimer</projectUrl>
@@ -12,13 +12,13 @@
 		<description>Some handy Monogame timer objects that can be used for time effects like hiererchical time, slowdown, speedup, hitpause, etc.</description>
 		<releaseNotes />
 		<copyright>Copyright 2016</copyright>
-		<tags>MonoGame Android</tags>
+		<tags>MonoGame WindowsUniversal</tags>
 		<dependencies>
-			<dependency id="MonoGame.Framework.Android" version="(3.5,)"/>
+			<dependency id="MonoGame.Framework.WindowsUniversal" version="(3.5,)"/>
         </dependencies>
     </metadata>
     <files>
-        <file src="Y:\Documents\Projects\GameTimer\GameTimer\GameTimer.Android\bin\Release\GameTimer.Android.pdb" target="lib\GameTimer.Android.pdb" />
-        <file src="Y:\Documents\Projects\GameTimer\GameTimer\GameTimer.Android\bin\Release\GameTimer.Android.dll" target="lib\GameTimer.Android.dll" />
+        <file src="Y:\Documents\Projects\GameTimer\GameTimer\GameTimer.WindowsUniversal\bin\Release\GameTimer.WindowsUniversal.pdb" target="lib\GameTimer.WindowsUniversal.pdb" />
+        <file src="Y:\Documents\Projects\GameTimer\GameTimer\GameTimer.WindowsUniversal\bin\Release\GameTimer.WindowsUniversal.dll" target="lib\GameTimer.WindowsUniversal.dll" />
     </files>
 </package>
