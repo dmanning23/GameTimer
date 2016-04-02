@@ -40,7 +40,6 @@ x64/
 *.cachefile
 *.apk
 *.nupkg
-.vs/
 
 # Visual C++ cache files
 ipch/
