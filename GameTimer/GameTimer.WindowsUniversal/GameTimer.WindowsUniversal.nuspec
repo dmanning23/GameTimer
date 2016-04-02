@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>GameTimer.WindowsUniversal</id>
-        <version>1.0.7</version>
+        <version>1.0.9</version>
         <title>GameTimer.WindowsUniversal</title>
         <authors>dmanning23</authors>
 		<owners>dmanning23</owners>
@@ -15,10 +15,11 @@
 		<tags>MonoGame WindowsUniversal</tags>
 		<dependencies>
 			<dependency id="MonoGame.Framework.WindowsUniversal" version="(3.5,)"/>
+			<dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="(5.0,)"/>
         </dependencies>
     </metadata>
     <files>
-        <file src="Y:\Documents\Projects\GameTimer\GameTimer\GameTimer.WindowsUniversal\bin\Release\GameTimer.WindowsUniversal.pdb" target="lib\GameTimer.WindowsUniversal.pdb" />
-        <file src="Y:\Documents\Projects\GameTimer\GameTimer\GameTimer.WindowsUniversal\bin\Release\GameTimer.WindowsUniversal.dll" target="lib\GameTimer.WindowsUniversal.dll" />
+        <file src="Y:\Documents\Projects\GameTimer\GameTimer\GameTimer.WindowsUniversal\bin\Release\GameTimer.WindowsUniversal.pdb" target="lib\netcore\GameTimer.WindowsUniversal.pdb" />
+        <file src="Y:\Documents\Projects\GameTimer\GameTimer\GameTimer.WindowsUniversal\bin\Release\GameTimer.WindowsUniversal.dll" target="lib\netcore\GameTimer.WindowsUniversal.dll" />
     </files>
 </package>
