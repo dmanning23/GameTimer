@@ -18,7 +18,7 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="Y:\Documents\Projects\GameTimer\GameTimer\GameTimer.DesktopGL\bin\Release\GameTimer.DesktopGL.pdb" target="lib\GameTimer.DesktopGL.pdb" />
-        <file src="Y:\Documents\Projects\GameTimer\GameTimer\GameTimer.DesktopGL\bin\Release\GameTimer.DesktopGL.dll" target="lib\GameTimer.DesktopGL.dll" />
+        <file src="C:\Projects\GameTimer\GameTimer\GameTimer.DesktopGL\bin\Release\GameTimer.DesktopGL.pdb" target="lib\GameTimer.DesktopGL.pdb" />
+        <file src="C:\Projects\GameTimer\GameTimer\GameTimer.DesktopGL\bin\Release\GameTimer.DesktopGL.dll" target="lib\GameTimer.DesktopGL.dll" />
     </files>
 </package>

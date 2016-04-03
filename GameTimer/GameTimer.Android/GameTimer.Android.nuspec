@@ -18,7 +18,7 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="Y:\Documents\Projects\GameTimer\GameTimer\GameTimer.Android\bin\Release\GameTimer.Android.pdb" target="lib\GameTimer.Android.pdb" />
-        <file src="Y:\Documents\Projects\GameTimer\GameTimer\GameTimer.Android\bin\Release\GameTimer.Android.dll" target="lib\GameTimer.Android.dll" />
+        <file src="C:\Projects\GameTimer\GameTimer\GameTimer.Android\bin\Release\GameTimer.Android.pdb" target="lib\GameTimer.Android.pdb" />
+        <file src="C:\Projects\GameTimer\GameTimer\GameTimer.Android\bin\Release\GameTimer.Android.dll" target="lib\GameTimer.Android.dll" />
     </files>
 </package>

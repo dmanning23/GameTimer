@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <id>GameTimer.WindowsUniversal</id>
-        <version>1.0.9</version>
-        <title>GameTimer.WindowsUniversal</title>
+        <id>GameTimer.iOS</id>
+        <version>1.0.7</version>
+        <title>GameTimer.iOS</title>
         <authors>dmanning23</authors>
 		<owners>dmanning23</owners>
 		<projectUrl>https://github.com/dmanning23/GameTimer</projectUrl>
@@ -12,14 +12,13 @@
 		<description>Some handy Monogame timer objects that can be used for time effects like hiererchical time, slowdown, speedup, hitpause, etc.</description>
 		<releaseNotes />
 		<copyright>Copyright 2016</copyright>
-		<tags>MonoGame WindowsUniversal</tags>
+		<tags>MonoGame iOS</tags>
 		<dependencies>
-			<dependency id="MonoGame.Framework.WindowsUniversal" version="(3.5,)"/>
-			<dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="(5.0,)"/>
+			<dependency id="MonoGame.Framework.iOS" version="(3.5,)"/>
         </dependencies>
     </metadata>
     <files>
-        <file src="C:\Projects\GameTimer\GameTimer\GameTimer.WindowsUniversal\bin\Release\GameTimer.WindowsUniversal.pdb" target="lib\netcore\GameTimer.WindowsUniversal.pdb" />
-        <file src="C:\Projects\GameTimer\GameTimer\GameTimer.WindowsUniversal\bin\Release\GameTimer.WindowsUniversal.dll" target="lib\netcore\GameTimer.WindowsUniversal.dll" />
+        <file src="C:\Projects\GameTimer\GameTimer\GameTimer.iOS\bin\Release\GameTimer.iOS.pdb" target="lib\GameTimer.iOS.pdb" />
+        <file src="C:\Projects\GameTimer\GameTimer\GameTimer.iOS\bin\Release\GameTimer.iOS.dll" target="lib\GameTimer.iOS.dll" />
     </files>
 </package>
