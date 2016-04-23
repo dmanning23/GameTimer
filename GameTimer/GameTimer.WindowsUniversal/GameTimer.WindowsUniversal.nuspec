@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-    <metadata>
-        <id>GameTimer.WindowsUniversal</id>
-        <version>1.0.9</version>
-        <title>GameTimer.WindowsUniversal</title>
-        <authors>dmanning23</authors>
+	<metadata>
+		<id>GameTimer.WindowsUniversal</id>
+		<version>1.0.11</version>
+		<title>GameTimer.WindowsUniversal</title>
+		<authors>dmanning23</authors>
 		<owners>dmanning23</owners>
 		<projectUrl>https://github.com/dmanning23/GameTimer</projectUrl>
 		<licenseUrl>https://github.com/dmanning23/GameTimer/blob/master/LICENSE.txt</licenseUrl>
@@ -14,12 +14,15 @@
 		<copyright>Copyright 2016</copyright>
 		<tags>MonoGame WindowsUniversal</tags>
 		<dependencies>
-			<dependency id="MonoGame.Framework.WindowsUniversal" version="(3.5,)"/>
-			<dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="(5.0,)"/>
-        </dependencies>
-    </metadata>
-    <files>
-        <file src="C:\Projects\GameTimer\GameTimer\GameTimer.WindowsUniversal\bin\Release\GameTimer.WindowsUniversal.pdb" target="lib\netcore\GameTimer.WindowsUniversal.pdb" />
-        <file src="C:\Projects\GameTimer\GameTimer\GameTimer.WindowsUniversal\bin\Release\GameTimer.WindowsUniversal.dll" target="lib\netcore\GameTimer.WindowsUniversal.dll" />
-    </files>
+			<dependency id="MonoGame.Framework.WindowsUniversal" version="3.5"/>
+			<dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="5.0"/>
+			<dependency id="SharpDX" version="[3.0.0]"/>
+			<dependency id="SharpDX.Direct2D1" version="[3.0.0]"/>
+			<dependency id="SharpDX.Direct3D11" version="[3.0.0]"/>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="bin\Release\GameTimer.WindowsUniversal.pdb" target="lib\netcore\GameTimer.WindowsUniversal.pdb" />
+		<file src="bin\Release\GameTimer.WindowsUniversal.dll" target="lib\netcore\GameTimer.WindowsUniversal.dll" />
+	</files>
 </package>

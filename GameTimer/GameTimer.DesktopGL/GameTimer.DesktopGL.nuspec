@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
-    <metadata>
-        <id>GameTimer.DesktopGL</id>
-        <version>1.0.7</version>
-        <title>GameTimer.DesktopGL</title>
-        <authors>dmanning23</authors>
+	<metadata>
+		<id>GameTimer.DesktopGL</id>
+		<version>1.0.11</version>
+		<title>GameTimer.DesktopGL</title>
+		<authors>dmanning23</authors>
 		<owners>dmanning23</owners>
 		<projectUrl>https://github.com/dmanning23/GameTimer</projectUrl>
 		<licenseUrl>https://github.com/dmanning23/GameTimer/blob/master/LICENSE.txt</licenseUrl>
@@ -14,11 +14,11 @@
 		<copyright>Copyright 2016</copyright>
 		<tags>MonoGame DesktopGL</tags>
 		<dependencies>
-			<dependency id="MonoGame.Framework.DesktopGL" version="(3.5,)"/>
-        </dependencies>
-    </metadata>
-    <files>
-        <file src="C:\Projects\GameTimer\GameTimer\GameTimer.DesktopGL\bin\Release\GameTimer.DesktopGL.pdb" target="lib\GameTimer.DesktopGL.pdb" />
-        <file src="C:\Projects\GameTimer\GameTimer\GameTimer.DesktopGL\bin\Release\GameTimer.DesktopGL.dll" target="lib\GameTimer.DesktopGL.dll" />
-    </files>
+			<dependency id="MonoGame.Framework.DesktopGL" version="3.5"/>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="bin\Release\GameTimer.DesktopGL.pdb" target="lib\GameTimer.DesktopGL.pdb" />
+		<file src="bin\Release\GameTimer.DesktopGL.dll" target="lib\GameTimer.DesktopGL.dll" />
+	</files>
 </package>
