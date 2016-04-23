@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7CA8D18A-CD35-417E-BF85-28AADD18189F}"
 	ProjectSection(SolutionItems) = preProject
 		buildNugetPackages.ps1 = buildNugetPackages.ps1
+		GameTimer.nuspec = GameTimer.nuspec
 	EndProjectSection
 EndProject
 Global

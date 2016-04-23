@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>GameTimer</id>
+		<version>1.0.1</version>
+		<title>GameTimer</title>
+		<authors>dmanning23</authors>
+		<owners>dmanning23</owners>
+		<projectUrl>https://github.com/dmanning23/GameTimer</projectUrl>
+		<licenseUrl>https://github.com/dmanning23/GameTimer/blob/master/LICENSE.txt</licenseUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>Some handy Monogame timer objects that can be used for time effects like hiererchical time, slowdown, speedup, hitpause, etc.</description>
+		<releaseNotes />
+		<copyright>Copyright 2016</copyright>
+		<tags>pcl, windows phone, winphone, android, ios, windows universal, monogame</tags>
+		<dependencies>
+
+			<!--Xamarin.Android-->
+			<group targetFramework="MonoAndroid10">
+				<dependency id="MonoGame.Framework.Android" version="3.5"/>
+			</group>
+
+			<!--Xamarin.iOS Unified-->
+			<group targetFramework="Xamarin.iOS10">
+				<dependency id="MonoGame.Framework.iOS" version="3.5"/>
+			</group>
+
+			<!--Win Phone-->
+			<group targetFramework="uap10.0">
+				<dependency id="MonoGame.Framework.WindowsUniversal" version="3.5"/>
+				<dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="5.1"/>
+				<dependency id="SharpDX" version="[3.0.0]"/>
+				<dependency id="SharpDX.Direct2D1" version="[3.0.0]"/>
+				<dependency id="SharpDX.Direct3D11" version="[3.0.0]"/>
+			</group>
+
+			<group targetFramework="net452">
+				<dependency id="MonoGame.Framework.DesktopGL" version="3.5"/>
+			</group>
+
+		</dependencies>
+	</metadata>
+	<files>
+
+		<!--Xamarin.Android-->
+		<file src="GameTimer.Android\bin\Release\GameTimer.Android.pdb" target="lib\MonoAndroid10\GameTimer.Android.pdb" />
+		<file src="GameTimer.Android\bin\Release\GameTimer.Android.dll" target="lib\MonoAndroid10\GameTimer.Android.dll" />
+
+		<!--Xamarin.iOS Unified-->
+		<file src="GameTimer.iOS\bin\Release\GameTimer.iOS.pdb" target="lib\Xamarin.iOS10\GameTimer.iOS.pdb" />
+		<file src="GameTimer.iOS\bin\Release\GameTimer.iOS.dll" target="lib\Xamarin.iOS10\GameTimer.iOS.dll" />
+		
+		<!--Windows Universal-->
+		<file src="GameTimer.WindowsUniversal\bin\Release\GameTimer.WindowsUniversal.pdb" target="lib\uap10.0\GameTimer.WindowsUniversal.pdb" />
+		<file src="GameTimer.WindowsUniversal\bin\Release\GameTimer.WindowsUniversal.dll" target="lib\uap10.0\GameTimer.WindowsUniversal.dll" />
+
+		<!--DesktopGL-->
+		<file src="GameTimer.DesktopGL\bin\Release\GameTimer.DesktopGL.pdb" target="lib\net452\GameTimer.DesktopGL.pdb" />
+		<file src="GameTimer.DesktopGL\bin\Release\GameTimer.DesktopGL.dll" target="lib\net452\GameTimer.DesktopGL.dll" />
+
+	</files>
+</package>

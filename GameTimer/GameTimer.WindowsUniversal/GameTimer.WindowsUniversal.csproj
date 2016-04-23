@@ -104,7 +104,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <None Include="GameTimer.WindowsUniversal.nuspec" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
