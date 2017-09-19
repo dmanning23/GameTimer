@@ -45,18 +45,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Source\CountdownTimer.cs">
-      <Link>CountdownTimer.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Source\GameClock.cs">
-      <Link>GameClock.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Source\HitPauseClock.cs">
-      <Link>HitPauseClock.cs</Link>
-    </Compile>
-    <Compile Include="..\..\Source\TimeUpdater.cs">
-      <Link>TimeUpdater.cs</Link>
-    </Compile>
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,6 +55,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
   </ItemGroup>
+  <Import Project="..\GameTimer.SharedProject\GameTimer.SharedProject.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

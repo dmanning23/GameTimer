@@ -88,5 +88,24 @@ namespace GameTimer.Tests
 
 			Assert.AreEqual(0.75f, timer.Lerp());
 		}
+
+		[Test]
+		public void Started()
+		{
+			var timer = new CountdownTimer();
+			timer.Start(4f);
+
+			Assert.IsTrue(timer.HasTimeRemaining());
+		}
+
+		[Test]
+		public void Stopped()
+		{
+			var timer = new CountdownTimer();
+			timer.Start(4f);
+			timer.Stop();
+
+			Assert.IsFalse(timer.HasTimeRemaining());
+		}
 	}
 }
