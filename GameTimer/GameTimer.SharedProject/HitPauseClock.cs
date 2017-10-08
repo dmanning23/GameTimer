@@ -10,7 +10,7 @@ namespace GameTimer
 		#region Members
 
 		//timer for doing hit pause
-		private readonly CountdownTimer m_HitPause;
+		private CountdownTimer HitPause { get; set; }
 
 		#endregion //Members
 
@@ -18,51 +18,51 @@ namespace GameTimer
 
 		public HitPauseClock()
 		{
-			m_HitPause = new CountdownTimer();
+			HitPause = new CountdownTimer();
 		}
 
 		/// <summary>
 		/// Pause the character clock for hit pause
 		/// </summary>
-		/// <param name="fTimeDelta">the amount of time to hit pause for</param>
-		public void AddHitPause(float fTimeDelta)
+		/// <param name="hitPauseTimeDelta">the amount of time to hit pause for</param>
+		public void AddHitPause(float hitPauseTimeDelta)
 		{
-			m_HitPause.Start(fTimeDelta);
+			HitPause.Start(hitPauseTimeDelta);
 		}
 
 		/// <summary>
 		/// Update this clock... this is actually the only one I'm sure works
 		/// </summary>
-		/// <param name="rInst"></param>
-		public override void Update(GameClock rInst)
+		/// <param name="clock"></param>
+		public override void Update(GameClock clock)
 		{
 			//update the hit pause first to tell if we are paused
-			m_HitPause.Update(rInst);
-			Paused = rInst.Paused || (0.0f < m_HitPause.RemainingTime());
+			HitPause.Update(clock);
+			Paused = clock.Paused || !HitPause.HasTimeRemaining;
 
-			base.Update(rInst);
+			base.Update(clock);
 		}
 
-		public override void Update(TimeUpdater fCurrentTime)
+		public override void Update(TimeUpdater clock)
 		{
-			m_HitPause.Update(fCurrentTime);
-			Paused = (0.0f < m_HitPause.RemainingTime());
+			HitPause.Update(clock);
+			Paused = !HitPause.HasTimeRemaining;
 
-			base.Update(fCurrentTime);
+			base.Update(clock);
 		}
 
-		public override void Update(GameTime CurrentTime)
+		public override void Update(GameTime currentTime)
 		{
-			m_HitPause.Update(CurrentTime);
-			Paused = (0.0f < m_HitPause.RemainingTime());
+			HitPause.Update(currentTime);
+			Paused = !HitPause.HasTimeRemaining;
 
-			base.Update(CurrentTime);
+			base.Update(currentTime);
 		}
 
 		public override void Update(float fCurrentTime)
 		{
-			m_HitPause.Update(fCurrentTime);
-			Paused = (0.0f < m_HitPause.RemainingTime());
+			HitPause.Update(fCurrentTime);
+			Paused = !HitPause.HasTimeRemaining;
 
 			base.Update(fCurrentTime);
 		}

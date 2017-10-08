@@ -1,11 +1,12 @@
 using System.Text;
 using Microsoft.Xna.Framework;
+using System;
 
 namespace GameTimer
 {
 	public class GameClock
 	{
-		#region Member Variables
+		#region Properties
 
 		/// <summary>
 		/// The current time of this clock in seconds
@@ -28,7 +29,18 @@ namespace GameTimer
 		/// </summary>
 		public float TimerSpeed { get; set; }
 
-		#endregion //Member Variables
+		public float PreviousTime
+		{
+			get
+			{
+				float prevTime = (CurrentTime - TimeDelta);
+
+				//dont return less than 0 for time
+				return Math.Max(prevTime, 0f);
+			}
+		}
+
+		#endregion //Properties
 
 		#region Methods
 
@@ -79,8 +91,8 @@ namespace GameTimer
 			{
 				//Get the time delta
 				TimeDelta = rCurrentTime.ElapsedGameTime.Seconds;
-				float fMilliseconds = rCurrentTime.ElapsedGameTime.Milliseconds;
-				TimeDelta += (fMilliseconds / 1000.0f);
+				var milliseconds = rCurrentTime.ElapsedGameTime.Milliseconds;
+				TimeDelta += (milliseconds / 1000.0f);
 
 				//update the delta by our speed multiplier
 				TimeDelta *= TimerSpeed;
@@ -145,14 +157,6 @@ namespace GameTimer
 			Update(GameClock.FramesToSeconds(iCurrentTime));
 		}
 
-		public float PreviousTime()
-		{
-			float PrevTime = (CurrentTime - TimeDelta);
-
-			//dont return less than 0 for time
-			return ((PrevTime >= 0.0f) ? PrevTime : 0.0f);
-		}
-
 		/// <summary>
 		/// Subtract some time from this timer
 		/// </summary>
@@ -175,22 +179,22 @@ namespace GameTimer
 		/// <summary>
 		/// convert seconds to frames
 		/// </summary>
-		/// <param name="fSeconds">the time in floating point seconds</param>
+		/// <param name="seconds">the time in floating point seconds</param>
 		/// <returns>a whole number representing the current time in 1/60 second increments</returns>
-		public static int SecondsToFrames(float fSeconds)
+		public static int SecondsToFrames(float seconds)
 		{
 			//at .5 so it will round up when it chops off the decimals
-			return (int)((fSeconds * 60.0f) + 0.5f);
+			return (int)((seconds * 60.0f) + 0.5f);
 		}
 
 		/// <summary>
 		/// convert frames to seconds
 		/// </summary>
-		/// <param name="iFrames">the time to convert in 1/60 second increments</param>
+		/// <param name="frames">the time to convert in 1/60 second increments</param>
 		/// <returns>floating point time</returns>
-		public static float FramesToSeconds(int iFrames)
+		public static float FramesToSeconds(int frames)
 		{
-			return (iFrames / 60.0f);
+			return (frames / 60.0f);
 		}
 
 		/// <summary>
@@ -216,44 +220,44 @@ namespace GameTimer
 		/// Get the remaining time as a human readable string
 		/// </summary>
 		/// <returns>The time string.</returns>
-		/// <param name="fTime">the time to convert to a string</param>
-		public static string ToTimeString(float fTime)
+		/// <param name="time">the time to convert to a string</param>
+		public static string ToTimeString(float time)
 		{
 			//stringbuilder to hold our text
-			var strTime = new StringBuilder();
+			var timeText = new StringBuilder();
 
 			//Get the number of hours
-			var iHours = (int)(fTime / 3600.0f);
+			var iHours = (int)(time / 3600.0f);
 			if (0 < iHours)
 			{
 				//Add the number of hours to the string
-				strTime.AppendFormat("{0}:", iHours.ToString());
+				timeText.AppendFormat("{0}:", iHours.ToString());
 
 				//subtract the number of hours from the time
-				fTime -= iHours * 3600;
+				time -= iHours * 3600;
 			}
 
 			//get the number of minutes
-			var iMinutes = (int)(fTime / 60.0f);
+			var iMinutes = (int)(time / 60.0f);
 
 			//add a 0 if there are hours on the clock but single digit minutes
 			if ((0 < iHours) && (iMinutes < 10))
 			{
-				strTime.AppendFormat("0");
+				timeText.AppendFormat("0");
 			}
 
 			//add the number of minutes to the string
-			strTime.AppendFormat("{0}:", iMinutes.ToString());
+			timeText.AppendFormat("{0}:", iMinutes.ToString());
 
 			//add the number of seconds
-			var iSeconds = (int)(fTime % 60.0f);
+			var iSeconds = (int)(time % 60.0f);
 			if (iSeconds < 10)
 			{
-				strTime.AppendFormat("0");
+				timeText.AppendFormat("0");
 			}
-			strTime.Append(iSeconds.ToString());
+			timeText.Append(iSeconds.ToString());
 
-			return strTime.ToString();
+			return timeText.ToString();
 		}
 
 		#endregion

@@ -18,6 +18,30 @@ namespace GameTimer
 		/// </summary>
 		public float StartTime { get; private set; }
 
+		/// <summary>
+		/// get the amount of time remaining on this egg timer
+		/// </summary>
+		/// <returns>the number of seconds left</returns>
+		public float RemainingTime
+		{
+			get
+			{
+				return (CountdownLength - (CurrentTime - StartTime));
+			}
+		}
+
+		/// <summary>
+		/// check if there is any time left on this timer
+		/// </summary>
+		/// <returns></returns>
+		public bool HasTimeRemaining
+		{
+			get
+			{
+				return (0.0f < RemainingTime);
+			}
+		}
+
 		#endregion //Properties
 
 		#region Methods
@@ -34,43 +58,25 @@ namespace GameTimer
 		/// <summary>
 		/// start the egg timer!
 		/// </summary>
-		/// <param name="fSeconds">how long to run this timer</param>
-		public void Start(float fSeconds)
+		/// <param name="seconds">how long to run this timer</param>
+		public void Start(float seconds)
 		{
 			base.Start();
-			CountdownLength = fSeconds;
+			CountdownLength = seconds;
 			StartTime = CurrentTime;
 		}
 
 		/// <summary>
 		/// start the egg timer!
 		/// </summary>
-		/// <param name="fSeconds">how long to run this timer</param>
+		/// <param name="seconds">how long to run this timer</param>
 		/// <param name="startTime"></param>
-		public void Start(float fSeconds, float startTime)
+		public void Start(float seconds, float startTime)
 		{
 			base.Start();
-			CountdownLength = fSeconds;
+			CountdownLength = seconds;
 			CurrentTime = startTime;
 			StartTime = CurrentTime;
-		}
-
-		/// <summary>
-		/// get the amount of time remaining on this egg timer
-		/// </summary>
-		/// <returns>the number of seconds left</returns>
-		public float RemainingTime()
-		{
-			return (CountdownLength - (CurrentTime - StartTime));
-		}
-
-		/// <summary>
-		/// check if there is any time left on this timer
-		/// </summary>
-		/// <returns></returns>
-		public bool HasTimeRemaining()
-		{
-			return (0.0f < RemainingTime());
 		}
 
 		/// <summary>
@@ -108,7 +114,7 @@ namespace GameTimer
 		/// <filterpriority>2</filterpriority>
 		public override string ToString()
 		{
-			return GameClock.ToTimeString(RemainingTime());
+			return GameClock.ToTimeString(RemainingTime);
 		}
 
 		/// <summary>
@@ -121,7 +127,7 @@ namespace GameTimer
 			//guard against divide by 0
 			if (0.0 < CountdownLength)
 			{
-				return (RemainingTime() / CountdownLength);
+				return (RemainingTime / CountdownLength);
 			}
 			else
 			{
