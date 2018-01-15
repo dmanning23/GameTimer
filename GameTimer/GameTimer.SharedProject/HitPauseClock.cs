@@ -10,7 +10,7 @@ namespace GameTimer
 		#region Members
 
 		//timer for doing hit pause
-		private CountdownTimer HitPause { get; set; }
+		protected CountdownTimer HitPause { get; set; }
 
 		#endregion //Members
 
@@ -28,6 +28,7 @@ namespace GameTimer
 		public void AddHitPause(float hitPauseTimeDelta)
 		{
 			HitPause.Start(hitPauseTimeDelta);
+			Paused = HitPause.HasTimeRemaining;
 		}
 
 		/// <summary>
@@ -38,7 +39,7 @@ namespace GameTimer
 		{
 			//update the hit pause first to tell if we are paused
 			HitPause.Update(clock);
-			Paused = clock.Paused || !HitPause.HasTimeRemaining;
+			Paused = clock.Paused || HitPause.HasTimeRemaining;
 
 			base.Update(clock);
 		}
@@ -46,7 +47,7 @@ namespace GameTimer
 		public override void Update(TimeUpdater clock)
 		{
 			HitPause.Update(clock);
-			Paused = !HitPause.HasTimeRemaining;
+			Paused = HitPause.HasTimeRemaining;
 
 			base.Update(clock);
 		}
@@ -54,7 +55,7 @@ namespace GameTimer
 		public override void Update(GameTime currentTime)
 		{
 			HitPause.Update(currentTime);
-			Paused = !HitPause.HasTimeRemaining;
+			Paused = HitPause.HasTimeRemaining;
 
 			base.Update(currentTime);
 		}
@@ -62,7 +63,7 @@ namespace GameTimer
 		public override void Update(float fCurrentTime)
 		{
 			HitPause.Update(fCurrentTime);
-			Paused = !HitPause.HasTimeRemaining;
+			Paused = HitPause.HasTimeRemaining;
 
 			base.Update(fCurrentTime);
 		}

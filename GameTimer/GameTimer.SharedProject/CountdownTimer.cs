@@ -16,7 +16,7 @@ namespace GameTimer
 		/// <summary>
 		/// the time this eggtimer was started
 		/// </summary>
-		public float StartTime { get; private set; }
+		public float StartTime { get; protected set; }
 
 		/// <summary>
 		/// get the amount of time remaining on this egg timer
