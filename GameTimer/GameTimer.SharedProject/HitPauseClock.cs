@@ -60,12 +60,12 @@ namespace GameTimer
 			base.Update(currentTime);
 		}
 
-		public override void Update(float fCurrentTime)
+		public override void Update(float currentTime)
 		{
-			HitPause.Update(fCurrentTime);
+			HitPause.Update(currentTime);
 			Paused = HitPause.HasTimeRemaining;
 
-			base.Update(fCurrentTime);
+			base.Update(currentTime);
 		}
 
 		#endregion //Methods

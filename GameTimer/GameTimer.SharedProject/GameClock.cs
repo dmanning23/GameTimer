@@ -75,23 +75,23 @@ namespace GameTimer
 		/// <summary>
 		/// another way to update time, via time update object
 		/// </summary>
-		/// <param name="fCurrentTime">the current time in seconds</param>
-		public virtual void Update(TimeUpdater fCurrentTime)
+		/// <param name="currentTime">the current time in seconds</param>
+		public virtual void Update(TimeUpdater currentTime)
 		{
-			Update(fCurrentTime.CurrentTime);
+			Update(currentTime.CurrentTime);
 		}
 
 		/// <summary>
 		/// Update the time of this clock
 		/// </summary>
-		/// <param name="CurrentTime">The gametime object sent by xna to the app</param>
-		public virtual void Update(GameTime rCurrentTime)
+		/// <param name="currentTime">The gametime object sent by xna to the app</param>
+		public virtual void Update(GameTime currentTime)
 		{
 			if (!Paused)
 			{
 				//Get the time delta
-				TimeDelta = rCurrentTime.ElapsedGameTime.Seconds;
-				var milliseconds = rCurrentTime.ElapsedGameTime.Milliseconds;
+				TimeDelta = currentTime.ElapsedGameTime.Seconds;
+				var milliseconds = currentTime.ElapsedGameTime.Milliseconds;
 				TimeDelta += (milliseconds / 1000.0f);
 
 				//update the delta by our speed multiplier
@@ -109,12 +109,12 @@ namespace GameTimer
 		/// <summary>
 		/// another way to update the clock, via another game clock
 		/// </summary>
-		/// <param name="rInst">the clock that we will use to update this dude</param>
-		public virtual void Update(GameClock rInst)
+		/// <param name="inst">the clock that we will use to update this dude</param>
+		public virtual void Update(GameClock inst)
 		{
 			if (!Paused)
 			{
-				TimeDelta = rInst.TimeDelta;
+				TimeDelta = inst.TimeDelta;
 
 				//update the delta by our speed multiplier
 				TimeDelta *= TimerSpeed;
@@ -130,17 +130,17 @@ namespace GameTimer
 		/// <summary>
 		/// another way to update time, via plain ol float
 		/// </summary>
-		/// <param name="fCurrentTime">the current time in seconds</param>
-		public virtual void Update(float fCurrentTime)
+		/// <param name="currentTime">the current time in seconds</param>
+		public virtual void Update(float currentTime)
 		{
 			if (!Paused)
 			{
-				TimeDelta = fCurrentTime - CurrentTime;
+				TimeDelta = currentTime - CurrentTime;
 
 				//update the delta by our speed multiplier
 				TimeDelta *= TimerSpeed;
 
-				CurrentTime = fCurrentTime;
+				CurrentTime = currentTime;
 			}
 			else
 			{
@@ -152,18 +152,27 @@ namespace GameTimer
 		/// another way to update time, via plain ol int
 		/// </summary>
 		/// <param name="fCurrentTime">the current time in frames (1/60 second)</param>
-		public virtual void Update(int iCurrentTime)
+		public virtual void Update(int currentTime)
 		{
-			Update(GameClock.FramesToSeconds(iCurrentTime));
+			Update(GameClock.FramesToSeconds(currentTime));
 		}
 
 		/// <summary>
 		/// Subtract some time from this timer
 		/// </summary>
-		/// <param name="fTimeDelta">the amount of time to remove</param>
-		public void SubtractTime(float fTimeDelta)
+		/// <param name="timeDelta">the amount of time to remove</param>
+		public void SubtractTime(float timeDelta)
 		{
-			CurrentTime -= fTimeDelta;
+			CurrentTime -= timeDelta;
+		}
+
+		/// <summary>
+		/// Add some time to this timer
+		/// </summary>
+		/// <param name="timeDelta">the amount of time to add</param>
+		public void AppendTime(float timeDelta)
+		{
+			CurrentTime += timeDelta;
 		}
 
 		/// <summary>
@@ -227,35 +236,35 @@ namespace GameTimer
 			var timeText = new StringBuilder();
 
 			//Get the number of hours
-			var iHours = (int)(time / 3600.0f);
-			if (0 < iHours)
+			var hours = (int)(time / 3600.0f);
+			if (0 < hours)
 			{
 				//Add the number of hours to the string
-				timeText.AppendFormat("{0}:", iHours.ToString());
+				timeText.AppendFormat("{0}:", hours.ToString());
 
 				//subtract the number of hours from the time
-				time -= iHours * 3600;
+				time -= hours * 3600;
 			}
 
 			//get the number of minutes
-			var iMinutes = (int)(time / 60.0f);
+			var minutes = (int)(time / 60.0f);
 
 			//add a 0 if there are hours on the clock but single digit minutes
-			if ((0 < iHours) && (iMinutes < 10))
+			if ((0 < hours) && (minutes < 10))
 			{
 				timeText.AppendFormat("0");
 			}
 
 			//add the number of minutes to the string
-			timeText.AppendFormat("{0}:", iMinutes.ToString());
+			timeText.AppendFormat("{0}:", minutes.ToString());
 
 			//add the number of seconds
-			var iSeconds = (int)(time % 60.0f);
-			if (iSeconds < 10)
+			var seconds = (int)(time % 60.0f);
+			if (seconds < 10)
 			{
 				timeText.AppendFormat("0");
 			}
-			timeText.Append(iSeconds.ToString());
+			timeText.Append(seconds.ToString());
 
 			return timeText.ToString();
 		}
