@@ -42,6 +42,28 @@ namespace GameTimer
 			}
 		}
 
+		/// <summary>
+		/// Get the percentage of time remaining on this timer.
+		/// 1.0 is all the time remaining, 0.0 is time is done
+		/// </summary>
+		/// <returns>float: the percentage of time remaining from 1.0 -> 0.0</returns></returns>
+		public float Lerp
+		{
+			get
+			{
+				//guard against divide by 0
+				if (0.0 < CountdownLength)
+				{
+					return (RemainingTime / CountdownLength);
+				}
+				else
+				{
+					//this timer is done
+					return 0.0f;
+				}
+			}
+		}
+
 		#endregion //Properties
 
 		#region Methods
@@ -115,25 +137,6 @@ namespace GameTimer
 		public override string ToString()
 		{
 			return GameClock.ToTimeString(RemainingTime);
-		}
-
-		/// <summary>
-		/// Get the percentage of time remaining on this timer.
-		/// 1.0 is all the time remaining, 0.0 is time is done
-		/// </summary>
-		/// <returns>float: the percentage of time remaining from 1.0 -> 0.0</returns></returns>
-		public float Lerp()
-		{
-			//guard against divide by 0
-			if (0.0 < CountdownLength)
-			{
-				return (RemainingTime / CountdownLength);
-			}
-			else
-			{
-				//this timer is done
-				return 0.0f;
-			}
 		}
 
 		#endregion //Methods

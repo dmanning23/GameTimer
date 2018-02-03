@@ -20,7 +20,7 @@ namespace GameTimer.Tests
 		{
 			var timer = new CountdownTimer();
 			timer.Start(1f);
-			Assert.AreEqual(1, timer.Lerp());
+			Assert.AreEqual(1, timer.Lerp);
 		}
 
 		[Test]
@@ -42,7 +42,7 @@ namespace GameTimer.Tests
 
 			timer.Update(new GameTime(new TimeSpan(0, 0, 0, 0, 500), new TimeSpan(0, 0, 0, 0, 500)));
 
-			Assert.AreEqual(0.5f, timer.Lerp());
+			Assert.AreEqual(0.5f, timer.Lerp);
 		}
 
 		[Test]
@@ -64,7 +64,7 @@ namespace GameTimer.Tests
 
 			timer.Update(new GameTime(new TimeSpan(0, 0, 0, 0, 250), new TimeSpan(0, 0, 0, 0, 250)));
 
-			Assert.AreEqual(0.75f, timer.Lerp());
+			Assert.AreEqual(0.75f, timer.Lerp);
 		}
 
 		[Test]
@@ -86,7 +86,7 @@ namespace GameTimer.Tests
 
 			timer.Update(new GameTime(new TimeSpan(0, 0, 0, 1), new TimeSpan(0, 0, 0, 1)));
 
-			Assert.AreEqual(0.75f, timer.Lerp());
+			Assert.AreEqual(0.75f, timer.Lerp);
 		}
 
 		[Test]
