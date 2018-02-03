@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
 		<id>GameTimer</id>
-		<version>1.0.6</version>
+		<version>1.0.7</version>
 		<title>GameTimer</title>
 		<authors>dmanning23</authors>
 		<owners>dmanning23</owners>
@@ -35,7 +35,7 @@
 			</group>
 
 			<group targetFramework="net452">
-				<dependency id="MonoGame.Framework.DesktopGL" version="3.5"/>
+				<dependency id="MonoGame.Framework.WindowsDX" version="3.5"/>
 			</group>
 
 		</dependencies>
@@ -54,9 +54,9 @@
 		<file src="GameTimer.WindowsUniversal\bin\Release\GameTimer.WindowsUniversal.pdb" target="lib\uap10.0\GameTimer.WindowsUniversal.pdb" />
 		<file src="GameTimer.WindowsUniversal\bin\Release\GameTimer.WindowsUniversal.dll" target="lib\uap10.0\GameTimer.WindowsUniversal.dll" />
 
-		<!--DesktopGL-->
-		<file src="GameTimer.DesktopGL\bin\Release\GameTimer.DesktopGL.pdb" target="lib\net452\GameTimer.DesktopGL.pdb" />
-		<file src="GameTimer.DesktopGL\bin\Release\GameTimer.DesktopGL.dll" target="lib\net452\GameTimer.DesktopGL.dll" />
+		<!--WindowsDX-->
+		<file src="GameTimer.WindowsDX\bin\Release\GameTimer.WindowsDX.pdb" target="lib\net452\GameTimer.WindowsDX.pdb" />
+		<file src="GameTimer.WindowsDX\bin\Release\GameTimer.WindowsDX.dll" target="lib\net452\GameTimer.WindowsDX.dll" />
 
 	</files>
 </package>
