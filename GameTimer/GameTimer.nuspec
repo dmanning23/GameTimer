@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
 		<id>GameTimer</id>
-		<version>1.0.8</version>
+		<version>2.0</version>
 		<title>GameTimer</title>
 		<authors>dmanning23</authors>
 		<owners>dmanning23</owners>
@@ -12,30 +12,27 @@
 		<description>Some handy Monogame timer objects that can be used for time effects like hiererchical time, slowdown, speedup, hitpause, etc.</description>
 		<releaseNotes />
 		<copyright>Copyright 2016</copyright>
-		<tags>pcl, windows phone, winphone, android, ios, windows universal, monogame</tags>
+		<tags>android, ios, windows universal, monogame, xamarin</tags>
 		<dependencies>
 
 			<!--Xamarin.Android-->
 			<group targetFramework="MonoAndroid10">
-				<dependency id="MonoGame.Framework.Android" version="3.5"/>
+				<dependency id="MonoGame.Framework.Android" version="3.7"/>
 			</group>
 
 			<!--Xamarin.iOS Unified-->
 			<group targetFramework="Xamarin.iOS10">
-				<dependency id="MonoGame.Framework.iOS" version="3.5"/>
+				<dependency id="MonoGame.Framework.iOS" version="3.7"/>
 			</group>
 
 			<!--Windows Universal-->
 			<group targetFramework="uap10.0">
-				<dependency id="MonoGame.Framework.WindowsUniversal" version="3.5"/>
-				<dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="5.1"/>
-				<dependency id="SharpDX" version="[3.0.0]"/>
-				<dependency id="SharpDX.Direct2D1" version="[3.0.0]"/>
-				<dependency id="SharpDX.Direct3D11" version="[3.0.0]"/>
+				<dependency id="MonoGame.Framework.WindowsUniversal" version="3.7"/>
+				<dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="6.1"/>
 			</group>
 
 			<group targetFramework="net452">
-				<dependency id="MonoGame.Framework.WindowsDX" version="3.5"/>
+				<dependency id="MonoGame.Framework.WindowsDX" version="3.7"/>
 			</group>
 
 		</dependencies>
