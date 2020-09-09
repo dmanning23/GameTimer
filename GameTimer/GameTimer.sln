@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTimer.Android", "GameTimer.Android\GameTimer.Android.csproj", "{0C780B94-69C6-4FC7-AE90-E4011F13F4BC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTimer.Tests", "GameTimer.Tests\GameTimer.Tests.csproj", "{19166C0A-4356-4843-98E4-4DE999F897CD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTimer.WindowsUniversal", "GameTimer.WindowsUniversal\GameTimer.WindowsUniversal.csproj", "{6E9354B8-733C-44C1-9D28-F789388A1E97}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTimer.iOS", "GameTimer.iOS\GameTimer.iOS.csproj", "{83E79BA2-A38F-40C4-97DA-04C286C75A6D}"
 EndProject
@@ -26,7 +24,6 @@ Global
 		GameTimer.SharedProject\GameTimer.SharedProject.projitems*{0c780b94-69c6-4fc7-ae90-e4011f13f4bc}*SharedItemsImports = 4
 		GameTimer.SharedProject\GameTimer.SharedProject.projitems*{19166c0a-4356-4843-98e4-4de999f897cd}*SharedItemsImports = 4
 		GameTimer.SharedProject\GameTimer.SharedProject.projitems*{2b42e671-15a5-4e02-ad5b-9c20db93aee5}*SharedItemsImports = 13
-		GameTimer.SharedProject\GameTimer.SharedProject.projitems*{6e9354b8-733c-44c1-9d28-f789388a1e97}*SharedItemsImports = 4
 		GameTimer.SharedProject\GameTimer.SharedProject.projitems*{83e79ba2-a38f-40c4-97da-04c286c75a6d}*SharedItemsImports = 4
 		GameTimer.SharedProject\GameTimer.SharedProject.projitems*{e030683d-45fa-4d08-b0b3-3ebd67921211}*SharedItemsImports = 4
 	EndGlobalSection
@@ -93,30 +90,6 @@ Global
 		{19166C0A-4356-4843-98E4-4DE999F897CD}.Release|x64.Build.0 = Release|Any CPU
 		{19166C0A-4356-4843-98E4-4DE999F897CD}.Release|x86.ActiveCfg = Release|Any CPU
 		{19166C0A-4356-4843-98E4-4DE999F897CD}.Release|x86.Build.0 = Release|Any CPU
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.AppStore|Any CPU.Build.0 = Release|Any CPU
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.AppStore|ARM.ActiveCfg = Release|ARM
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.AppStore|ARM.Build.0 = Release|ARM
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.AppStore|x64.ActiveCfg = Release|x64
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.AppStore|x64.Build.0 = Release|x64
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.AppStore|x86.ActiveCfg = Release|x86
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.AppStore|x86.Build.0 = Release|x86
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Debug|ARM.ActiveCfg = Debug|ARM
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Debug|ARM.Build.0 = Debug|ARM
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Debug|x64.ActiveCfg = Debug|x64
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Debug|x64.Build.0 = Debug|x64
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Debug|x86.ActiveCfg = Debug|x86
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Debug|x86.Build.0 = Debug|x86
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Release|ARM.ActiveCfg = Release|ARM
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Release|ARM.Build.0 = Release|ARM
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Release|x64.ActiveCfg = Release|x64
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Release|x64.Build.0 = Release|x64
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Release|x86.ActiveCfg = Release|x86
-		{6E9354B8-733C-44C1-9D28-F789388A1E97}.Release|x86.Build.0 = Release|x86
 		{83E79BA2-A38F-40C4-97DA-04C286C75A6D}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
 		{83E79BA2-A38F-40C4-97DA-04C286C75A6D}.AppStore|Any CPU.Build.0 = Release|Any CPU
 		{83E79BA2-A38F-40C4-97DA-04C286C75A6D}.AppStore|ARM.ActiveCfg = Release|Any CPU

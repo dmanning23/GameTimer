@@ -1,5 +1,6 @@
 using Microsoft.Xna.Framework;
 using NUnit.Framework;
+using Shouldly;
 using System;
 
 namespace GameTimer.Tests
@@ -106,6 +107,66 @@ namespace GameTimer.Tests
 			timer.Stop();
 
 			Assert.IsFalse(timer.HasTimeRemaining);
+		}
+
+		[Test]
+		public void Start_LerpValues()
+		{
+			var timer = new CountdownTimer();
+			timer.Start(1f);
+			timer.LerpValues(100, 200).ShouldBe(100);
+		}
+
+		[Test]
+		public void Quarter_LerpValues()
+		{
+			var timer = new CountdownTimer();
+			timer.Start(4f);
+
+			timer.Update(new GameTime(new TimeSpan(0, 0, 0, 1), new TimeSpan(0, 0, 0, 1)));
+
+			timer.LerpValues(100, 200).ShouldBe(125);
+		}
+
+		[Test]
+		public void Quarter_LotsLerpValues()
+		{
+			var timer = new CountdownTimer();
+			timer.Start(4f);
+
+			timer.Update(new GameTime(new TimeSpan(0, 0, 0, 3), new TimeSpan(0, 0, 0, 3)));
+
+			timer.LerpValues(100, 200).ShouldBe(175);
+		}
+
+		[Test]
+		public void Start_LerpValues2()
+		{
+			var timer = new CountdownTimer();
+			timer.Start(1f);
+			timer.LerpValues(200, 100).ShouldBe(200);
+		}
+
+		[Test]
+		public void Quarter_LerpValues2()
+		{
+			var timer = new CountdownTimer();
+			timer.Start(4f);
+
+			timer.Update(new GameTime(new TimeSpan(0, 0, 0, 1), new TimeSpan(0, 0, 0, 1)));
+
+			timer.LerpValues(200, 100).ShouldBe(175);
+		}
+
+		[Test]
+		public void Quarter_LotsLerpValues2()
+		{
+			var timer = new CountdownTimer();
+			timer.Start(4f);
+
+			timer.Update(new GameTime(new TimeSpan(0, 0, 0, 3), new TimeSpan(0, 0, 0, 3)));
+
+			timer.LerpValues(200, 100).ShouldBe(125);
 		}
 	}
 }

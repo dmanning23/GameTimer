@@ -129,6 +129,12 @@ namespace GameTimer
 			CountdownLength += time;
 		}
 
+		public float LerpValues(float start, float end)
+		{
+			//guard against divide by 0
+			return end - ((end - start) * Lerp);
+		}
+
 		/// <summary>
 		/// Returns a string that represents the current object.
 		/// </summary>
