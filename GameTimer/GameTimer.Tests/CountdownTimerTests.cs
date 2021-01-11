@@ -168,5 +168,16 @@ namespace GameTimer.Tests
 
 			timer.LerpValues(200, 100).ShouldBe(125);
 		}
+
+		[Test]
+		public void LerpDoneTimer()
+		{
+			var timer = new CountdownTimer();
+			timer.Start(4f);
+
+			timer.Update(new GameTime(new TimeSpan(0, 0, 0, 5), new TimeSpan(0, 0, 0, 5)));
+
+			timer.LerpValues(200, 100).ShouldBe(100);
+		}
 	}
 }

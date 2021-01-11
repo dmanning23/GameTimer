@@ -131,8 +131,15 @@ namespace GameTimer
 
 		public float LerpValues(float start, float end)
 		{
-			//guard against divide by 0
-			return end - ((end - start) * Lerp);
+			if (HasTimeRemaining)
+			{
+				//guard against divide by 0
+				return end - ((end - start) * Lerp);
+			}
+			else
+			{
+				return end;
+			}
 		}
 
 		/// <summary>
