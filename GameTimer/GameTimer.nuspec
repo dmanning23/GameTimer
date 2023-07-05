@@ -2,16 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
 		<id>GameTimer</id>
-		<version>2.3</version>
+		<version>4.0</version>
 		<title>GameTimer</title>
 		<authors>dmanning23</authors>
-		<owners>dmanning23</owners>
 		<projectUrl>https://github.com/dmanning23/GameTimer</projectUrl>
 		<licenseUrl>https://github.com/dmanning23/GameTimer/blob/master/LICENSE.txt</licenseUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Some handy Monogame timer objects that can be used for time effects like hiererchical time, slowdown, speedup, hitpause, etc.</description>
-		<releaseNotes />
-		<copyright>Copyright 2016</copyright>
 		<tags>android, ios, windows universal, monogame, xamarin</tags>
 		<dependencies>
 
