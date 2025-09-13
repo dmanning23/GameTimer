@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <PackageId>GameTimer</PackageId>
-    <Version>5.0.5</Version>
+    <Version>5.0.6</Version>
     <Title>GameTimer</Title>
     <Authors>dmanning23</Authors>
     <Description>Some handy MonoGame timer objects that can be used for time effects like hierarchical time, slowdown, speedup, hitpause, etc.</Description>
