@@ -26,7 +26,7 @@ namespace GameTimer
 		{
 			get
 			{
-				return (CountdownLength - (CurrentTime - StartTime));
+				return CountdownLength - (CurrentTime - StartTime);
 			}
 		}
 
@@ -38,7 +38,7 @@ namespace GameTimer
 		{
 			get
 			{
-				return (0.0f < RemainingTime);
+				return 0.0f < RemainingTime;
 			}
 		}
 
@@ -54,7 +54,7 @@ namespace GameTimer
 				//guard against divide by 0
 				if (0.0 < CountdownLength)
 				{
-					return (RemainingTime / CountdownLength);
+					return RemainingTime / CountdownLength;
 				}
 				else
 				{

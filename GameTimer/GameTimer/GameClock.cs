@@ -92,7 +92,7 @@ namespace GameTimer
 				//Get the time delta
 				TimeDelta = currentTime.ElapsedGameTime.Seconds;
 				var milliseconds = currentTime.ElapsedGameTime.Milliseconds;
-				TimeDelta += (milliseconds / 1000.0f);
+				TimeDelta += milliseconds / 1000.0f;
 
 				//update the delta by our speed multiplier
 				TimeDelta *= TimerSpeed;
@@ -203,7 +203,7 @@ namespace GameTimer
 		/// <returns>floating point time</returns>
 		public static float FramesToSeconds(int frames)
 		{
-			return (frames / 60.0f);
+			return frames / 60.0f;
 		}
 
 		/// <summary>

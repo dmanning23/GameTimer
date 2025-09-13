@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <PackageId>GameTimer</PackageId>
+    <Version>5.0.5</Version>
+    <Title>GameTimer</Title>
+    <Authors>dmanning23</Authors>
+    <Description>Some handy MonoGame timer objects that can be used for time effects like hierarchical time, slowdown, speedup, hitpause, etc.</Description>
+    <PackageProjectUrl>https://github.com/dmanning23/GameTimer</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/dmanning23/GameTimer</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>monogame;timer;game-development;dotnet</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.*">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>

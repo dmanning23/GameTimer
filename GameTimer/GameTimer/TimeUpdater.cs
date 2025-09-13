@@ -39,7 +39,7 @@ namespace GameTimer
 		public void Update()
 		{
 			var currentTicks = DateTime.Now.Ticks;
-			var timeDelta = (currentTicks - StartTime);
+			var timeDelta = currentTicks - StartTime;
 			CurrentTime = timeDelta / 10000000.0f;
 		}
 
